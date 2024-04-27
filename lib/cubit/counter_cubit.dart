@@ -1,10 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterCubit extends Cubit<int> {
   CounterCubit() : super(0);
 
   void increment() {
-    print("Harshad");
+    if (kDebugMode) {
+      print("Harshad");
+    }
     emit(state + 1);
   }
 
@@ -13,5 +16,5 @@ class CounterCubit extends Cubit<int> {
       return;
     }
     emit(state - 1);
-  }
+  } 
 }
